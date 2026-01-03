@@ -34,22 +34,21 @@ introduces **explicit subject locking** to guarantee stability and predictabilit
 
 ## 🏗️ System Architecture
 
-Video Input
-↓
-Subject Discovery (YOLO + temporal aggregation)
-↓
-User Subject Selection
-↓
-Locked Subject Tracking (IoU + dead-zone)
-↓
-Smooth Vertical Cropping (9:16)
-↓
-Audio Re-attachment
-↓
-Final Vertical Short
+flowchart TD
+    A[User Uploads Video] --> B[Video Preprocessing]
+    B --> C["Subject Discovery<br/>(YOLO + Temporal Aggregation)"]
+
+    C --> D[Enhanced Subject Thumbnails]
+    D --> E[User Selects Target Subject]
+
+    E --> F["Subject-Locked Tracking<br/>(IoU Association)"]
+    F --> G[Dead-Zone Motion Control]
+
+    G --> H["Vertical Cropping<br/>(9:16 Aspect Ratio)"]
+    H --> I[Audio Reattachment]
+    I --> J[Final Vertical Short Output]
 
 
----
 
 ## ⚙️ Installation
 
